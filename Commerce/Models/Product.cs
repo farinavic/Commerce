@@ -11,25 +11,16 @@ namespace Commerce.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Product
     {
         public int ProductId { get; set; }
-
-        [Display(Name ="Name")]
         public string ProductName { get; set; }
-
-        [Display(Name ="Size")]
-        public string ProductSize { get; set; }
-
-        [Display(Name ="Quantity")]
         public Nullable<int> ProductQty { get; set; }
-
-        [Display(Name ="Brand")]
         public string ProductBrand { get; set; }
-        [Display(Name ="Image")]
         public string ProductPic { get; set; }
-        
+        public string ProductState { get; set; }
+        public string ProductDescr { get; set; }
+        public Nullable<double> ProductPrice { get; set; }
     }
 }
