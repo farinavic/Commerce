@@ -10,54 +10,70 @@
     <h4>Product</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
+        <div style="display: flex; flex-wrap: nowrap; justify-content: space-between;">
+            <div>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductState)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductBrand)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductState)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductBrand)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductDescr)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductPrice)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductDescr)
+                </dd>
+            </div>
+            <div>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductState)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductState)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductQty)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductPrice)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductQty)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductBrand)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductBrand)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductDescr)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductPrice)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductDescr)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductPic)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductPrice)
+                </dd>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductPic)
-        </dd>
+            <dd>
+                <div class="col-md-offset-2 col-md-10">
+                    <img id="ProductPicPreview" src="@Model.ProductPic" alt="Product Image" style="max-width: 300px; max-height: 400px;" />
+                </div>
+            </dd>
+        </div>
 
     </dl>
 </div>
 <p>
+    <div href="@Url.Action("Edit","Product")""></div>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <div>
+        <a class="btn btn-light" href="@Url.Action("Index")" style="margin-top:10px;">
+            <i class="bi bi-arrow-left-circle"></i>
+        </a>
+    </div>
 </p>
