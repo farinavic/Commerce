@@ -11,62 +11,79 @@
     <h4>Product</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
+        <div style="display: flex; flex-wrap: nowrap; justify-content: space-between;">
+            <div>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductBrand)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductPrice)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductBrand)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductDescr)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductPrice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductBrand)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductBrand)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductDescr)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductDescr)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductState)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductState)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductPic)
-        </dt>
-
-        <dd>
-            <div class="col-md-offset-2 col-md-10">
-                <img id="ProductPicPreview" src="@Model.ProductPic" alt="Product Image" style="max-width: 250px; max-height: 400px;" />
+                <dd>
+                    @Html.DisplayFor(model => model.ProductDescr)
+                </dd>
             </div>
-        </dd>
+            <div>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductState)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductState)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductQty)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductQty)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductPrice)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductPrice)
+                </dd>
+            </div>
+
+            <dd>
+                <div class="col-md-offset-2 col-md-10">
+                    <img id="ProductPicPreview" src="@Model.ProductPic" alt="Product Image" style="max-width: 300px; max-height: 400px;" />
+                </div>
+            </dd>
+        </div>
 
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+
+<div class="form-actions no-color">
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10" style=" display: inline-grid;">
+            <input type="submit" value="Delete" class="btn btn-danger" />
         </div>
+    </div>
+    <div>
+        <a class="btn btn-light" href="@Url.Action("Index")" style="margin-top:10px;">
+            <i class="bi bi-arrow-left-circle"></i>
+        </a>
+    </div>
+</div>
     }
 </div>
