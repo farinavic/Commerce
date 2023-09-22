@@ -69,21 +69,35 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-
-<div class="form-actions no-color">
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10" style=" display: inline-grid;">
-            <input type="submit" value="Delete" class="btn btn-danger" />
+        <div class="form-actions no-color">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="display: inline-grid;">
+                    <input type="button" value="Delete" class="btn btn-danger" id="deleteButton" />
+                </div>
+            </div>
+            <div>
+                <a class="btn btn-light" href="@Url.Action("Index")" style="margin-top:10px;">
+                    <i class="bi bi-arrow-left-circle"></i>
+                </a>
+            </div>
         </div>
-    </div>
-    <div>
-        <a class="btn btn-light" href="@Url.Action("Index")" style="margin-top:10px;">
-            <i class="bi bi-arrow-left-circle"></i>
-        </a>
-    </div>
-</div>
     }
 </div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#deleteButton").click(function () {
+                if (window.confirm("Are you sure you want to delete this record?")) {
+                    // Si el usuario confirma, envía el formulario para eliminar
+                    $("form").submit();
+                }
+            });
+        });
+    </script>
+}
+    </div>
